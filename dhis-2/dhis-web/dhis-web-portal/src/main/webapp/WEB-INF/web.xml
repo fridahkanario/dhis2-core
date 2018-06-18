@@ -205,6 +205,26 @@
     <async-supported>true</async-supported>
   </servlet>
 
+    <servlet>
+        <servlet-name>sse-dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:/META-INF/dhis/servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>sse-dispatcher</servlet-name>
+        <url-pattern>/sse</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sse-dispatcher</servlet-name>
+        <url-pattern>/sse/*</url-pattern>
+    </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>mobile</servlet-name>
     <url-pattern>/mobile</url-pattern>
